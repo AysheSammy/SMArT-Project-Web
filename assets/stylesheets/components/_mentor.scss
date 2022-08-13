@@ -1,0 +1,30 @@
+.mentor {
+  width: 301px;
+  height: 350px;
+  background: $primary;
+  box-shadow: 0px 4px 20px #b9bcbe, inset 2px 2px 20px #d6dbde;
+  border-radius: 20px;
+  @include flexBox(space-evenly, center);
+  flex-direction: column;
+  text-align: center;
+
+  img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+
+  p.name {
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 31px;
+    color: $text-color;
+  }
+
+  p.job {
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 31px;
+    color: $text-color;
+  }
+}

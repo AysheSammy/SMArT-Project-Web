@@ -76,6 +76,7 @@ nav .nav_btns .btn {
   font-size: 18px;
   line-height: 14px;
   transition: 0.3s ease-in-out;
+  border: none;
   cursor: pointer;
   margin-right: 20px;
 }
@@ -122,6 +123,158 @@ nav .nav_btns .lang:hover .lang-content {
   display: block;
 }
 
+.course {
+  width: 299px;
+  height: 400px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 20px #b9bcbe;
+  border-radius: 10px;
+}
+.course .banner {
+  width: 100%;
+  height: 100px;
+  background: url("./../images/home/course-banner.png") no-repeat;
+  background-size: cover;
+  border-radius: 10px 10px 0 0;
+}
+.course .alt_banner {
+  padding: 16px 25px 20px;
+  position: relative;
+}
+.course .alt_banner .first {
+  width: 100%;
+  position: relative;
+}
+.course .alt_banner .first img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 50%;
+}
+.course .alt_banner .first p {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 23px;
+  color: #FF9E01;
+  text-align: right;
+}
+.course .alt_banner h3 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 23px;
+  color: #0A0A0A;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+.course .alt_banner h3::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 1px;
+  background-color: #FDEA6E;
+  margin-top: 10px;
+}
+.course .alt_banner p.course-type {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #898989;
+}
+.course .alt_banner p.course-type span {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background-color: #FF9E01;
+  border-radius: 50%;
+  margin-bottom: 3px;
+}
+.course .alt_banner .course-infos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+.course .alt_banner .course-infos .course-info h4 {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #0A0A0A;
+  margin-top: 12px;
+}
+.course .alt_banner .course-infos .course-info p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #0D2DA2;
+  margin-top: 5px;
+}
+.course .alt_banner .course-infos .course-ingrdnt p {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 5px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #0A0A0A;
+}
+.course .alt_banner .course-infos .course-ingrdnt p span {
+  display: inline-block;
+  width: 10px;
+  height: 2px;
+  background-color: #4F93FE;
+  margin-right: 5px;
+}
+.course .alt_banner button {
+  padding: 10px 10px;
+  background: #FF9E01;
+  box-shadow: 0px 4px 20px rgba(255, 178, 125, 0.4);
+  border-radius: 8px;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  transition: 0.3s ease-in-out;
+  border: none;
+  cursor: pointer;
+  float: right;
+}
+.course .alt_banner button:hover {
+  background-color: #FFFFFF;
+  color: #FF9E01;
+}
+
+.mentor {
+  width: 301px;
+  height: 350px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 20px #b9bcbe, inset 2px 2px 20px #d6dbde;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.mentor img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+.mentor p.name {
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 31px;
+  color: #0A0A0A;
+}
+.mentor p.job {
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 31px;
+  color: #0A0A0A;
+}
+
 .home .hooper {
   width: 100%;
   height: 100vh;
@@ -136,6 +289,8 @@ nav .nav_btns .lang:hover .lang-content {
   width: 100%;
   height: 100vh;
   max-height: 480px;
+  padding: 0 5%;
+  margin-top: 50px;
 }
 .home .about .title {
   display: flex;
@@ -147,4 +302,73 @@ nav .nav_btns .lang:hover .lang-content {
   font-size: 26px;
   line-height: 31px;
   color: #0D2DA2;
+}
+.home .about_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+}
+.home .about_content img {
+  width: 50%;
+}
+.home .about_content .text {
+  width: 40%;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #898989;
+}
+.home .courses {
+  width: 100%;
+  max-height: 600px;
+  padding: 20px 0;
+}
+.home .courses h2 {
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 31px;
+  color: #0A0A0A;
+  text-align: center;
+}
+.home .courses .course-cards {
+  margin-left: 5%;
+}
+.home .courses .course-cards .hooper {
+  height: 500px !important;
+  padding-top: 50px;
+  overflow-y: visible;
+}
+.home .courses .course-cards .hooper .hooper-prev {
+  left: -60px;
+}
+.home .courses .course-cards .hooper .hooper-next {
+  right: -10px;
+}
+.home .mentors {
+  width: 100%;
+  max-height: 600px;
+  padding: 20px 0;
+}
+.home .mentors h2 {
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 31px;
+  color: #0A0A0A;
+  text-align: center;
+}
+.home .mentors .mentor-cards {
+  margin-left: 5%;
+}
+.home .mentors .mentor-cards .hooper {
+  height: 500px !important;
+  padding-top: 50px;
+  overflow-y: visible;
+}
+.home .mentors .mentor-cards .hooper .hooper-prev {
+  left: -60px;
+}
+.home .mentors .mentor-cards .hooper .hooper-next {
+  right: -10px;
 }/*# sourceMappingURL=main.css.map */

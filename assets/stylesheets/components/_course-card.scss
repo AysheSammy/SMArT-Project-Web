@@ -1,0 +1,119 @@
+.course {
+  width: 299px;
+  height: 400px;
+  background: $primary;
+  box-shadow: 0px 4px 20px #b9bcbe;
+  border-radius: 10px;
+  // margin: 0 20px;
+
+  .banner {
+    width: 100%;
+    height: 100px;
+    background: url('./../images/home/course-banner.png') no-repeat;
+    background-size: cover;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .alt_banner {
+    padding: 16px 25px 20px;
+    position: relative;
+    .first {
+      width: 100%;
+      position: relative;
+
+      img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 50%;
+        // left: 25px;
+      }
+      p {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 23px;
+        color: $accent;
+        text-align: right;
+      }
+    }
+    h3 {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 23px;
+      color: $text-color;
+      margin-top: 15px;
+      margin-bottom: 10px;
+      &::after{
+        content: '';
+        display: block;
+        width: 100px;
+        height: 1px;
+        background-color: $accent-light;
+        margin-top: 10px;
+      }
+    }
+
+    p.course-type {
+      span {
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        background-color: $accent;
+        border-radius: 50%;
+        margin-bottom: 3px;
+      }
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16px;
+      color: $text-light;
+    }
+
+    .course-infos {
+      @include flexBox(space-between, center);
+      margin-top: 20px;
+
+      .course-info {
+        h4 {
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 21px;
+          color: $text-color;
+          margin-top: 12px;
+        }
+        p {
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 19px;
+          color: $secondary;
+          margin-top: 5px;
+        }
+      }
+
+      .course-ingrdnt {
+        p {
+            @include flexBox(flex-start, center);
+            margin-top: 5px;
+          span {
+            display: inline-block;
+            width: 10px;
+            height: 2px;
+            background-color: $secondary-light;
+            margin-right: 5px;
+          }
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 21px;
+          color: $text-color;
+        }
+      }
+
+    }
+
+    button{
+      @include button($accent, $primary, 12px);
+      float: right;
+    }
+
+  }
+}
