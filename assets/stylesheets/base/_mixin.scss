@@ -1,0 +1,23 @@
+@mixin flexBox($x, $y) {
+  display: flex;
+  justify-content: $x;
+  align-items: $y;
+}
+
+@mixin button($bg, $color, $font) {
+  padding: 10px 10px;
+  background: $bg;
+  box-shadow: 0px 4px 20px rgba(255, 178, 125, 0.4);
+  border-radius: 8px;
+  color: $color;
+  font-weight: 600;
+  font-size: $font;
+  line-height: 14px;
+  transition: .3s ease-in-out;
+  cursor: pointer;
+
+  &:hover{
+    background-color: $color;
+    color: $bg;
+  }
+}

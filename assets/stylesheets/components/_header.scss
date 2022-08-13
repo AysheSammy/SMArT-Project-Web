@@ -1,0 +1,101 @@
+nav {
+  width: 100%;
+  height: 10vh;
+  max-height: 100px;
+  padding: 0 5%;
+  @include flexBox(space-between, center);
+
+  .logo {
+    img {
+      width: 100px;
+      object-fit: contain;
+    }
+  }
+
+  ul {
+    @include flexBox(center, center);
+
+    li {
+      &:not(:last-child) {
+        margin-right: 40px;
+      }
+
+      a {
+        color: $text-color;
+        position: relative;
+        display: block;
+        margin-bottom: 10px;
+        transition: .3s ease-in-out;
+
+        &:hover {
+          color: $secondary;
+
+          &::after {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 1px;
+            background-color: $secondary;
+            box-shadow: 5px 4px 10px #0d2da2;
+          }
+        }
+      }
+    }
+  }
+
+  .nav_btns {
+    @include flexBox(center, center);
+
+    .btn {
+      @include button($accent, $primary, 18px);
+      margin-right: 20px;
+    }
+
+    .lang {
+      background-color: $primary;
+      position: relative;
+      display: inline-block;
+
+      .dropbtn {
+        background-color: $primary;
+        color: $text-color;
+        text-decoration: underline;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+      }
+
+      .lang-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+
+        button {
+          background-color: $primary;
+          color: $text-color;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+          border: none;
+          outline: none;
+
+          &:hover {
+            background-color: #f1f1f1;
+          }
+        }
+      }
+
+      &:hover {
+        .lang-content {
+          display: block;
+        }
+      }
+    }
+  }
+}

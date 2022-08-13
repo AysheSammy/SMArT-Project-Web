@@ -1,0 +1,8 @@
+// base
+@import './base/reset', './base/variables', './base/mixin';
+
+// components
+@import './components/header';
+
+// pages
+@import './pages/index';
