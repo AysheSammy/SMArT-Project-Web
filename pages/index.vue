@@ -26,7 +26,7 @@
     <div class="about">
       <div class="title">
         <img src="@/static/Logo.svg" alt="">
-        <p>kim?</p>
+        <p>kim???</p>
       </div>
       <div class="about_content">
         <img src="@/assets/images/home/about-banner.png" alt="">
