@@ -1,9 +1,9 @@
 <template>
   <div class="mentor">
     <img :src="require(`@/assets/images/home/${info.img}`)" alt="">
-    <p class="name">{{info.fname}}</p>
-    <p class="name">{{info.lname}}</p>
-    <p class="job">{{info.job}}</p>
+    <p class="name">{{$tt(info.fname_tm, info.fname_ru)}}</p>
+    <p class="name">{{$tt(info.lname_tm, info.lname_ru)}}</p>
+    <p class="job">{{$tt(info.job_tm, info.job_ru)}}</p>
   </div>
 </template>
 

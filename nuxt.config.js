@@ -18,7 +18,9 @@ export default {
   css: ['~/assets/stylesheets/main.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    '~/plugins/language.js'
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -30,6 +32,32 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    [
+      '@nuxtjs/i18n',
+      {
+        strategy: 'no_prefix',
+        defaultLocale: 'en',
+        lazy: true,
+        langDir: 'lang/',
+        detectBrowserLanguage: {
+          useCookie: true,
+          cookieKey: 'smart_lang',
+          onlyOnRoot: true,
+        },
+        locales: [
+          {
+            name: 'TM',
+            code: 'tm',
+            file: 'tm.js',
+          },
+          {
+            name: 'RU',
+            code: 'ru',
+            file: 'ru.js',
+          },
+        ],
+      }
+    ]
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

@@ -1,0 +1,89 @@
+.inputs {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(65.98deg, #211ede 11.33%, #20196a 92.45%);
+    @include flexBox(center, center);
+  
+    .content {
+      width: 80%;
+      height: 90%;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 55px 130px;
+  
+      p.name {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 39px;
+        color: rgba(0, 0, 0, 0.89);
+      }
+      .forms {
+        width: 100%;
+        height: auto;
+        // @include flexBox(space-between, center);
+        .input {
+          width: 40%;
+          display: inline-block;
+          margin-right: 80px;
+  
+          label {
+            display: block;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 38px;
+            color: #000000;
+          }
+          input {
+            width: 100%;
+            height: 35px;
+            background: #ffffff;
+            border: 1px solid #000000;
+            border-radius: 8px;
+            outline: none;
+            padding: 10px;
+            font-size: 18px;
+          }
+        }
+        button {
+          display: block;
+          width: 80%;
+          height: 40px;
+          margin: 0 auto;
+          background: linear-gradient(
+            269.78deg,
+            rgba(32, 25, 106, 0.84) 12.77%,
+            rgba(33, 30, 222, 0.84) 79.75%
+          );
+          border: 0.5px solid #61b0dc;
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          border-radius: 8px;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 42px;
+          color: #ffffff;
+          margin-top: 50px;
+          cursor: pointer;
+          transition: .3s ease-in-out;
+          
+          &:hover{
+              background: linear-gradient(
+            5deg,
+            rgba(32, 25, 106, 0.84) 12.77%,
+            rgba(33, 30, 222, 0.84) 79.75%
+          );
+          transition: .3s ease-in-out;
+  
+          }
+        }
+      }
+      a {
+        display: block;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 29px;
+        color: #060606;
+        margin-top: 50px;
+        text-decoration: none;
+      }
+    }
+  }
+  

@@ -2,7 +2,7 @@
 @import './base/reset', './base/variables', './base/mixin';
 
 // components
-@import './components/header', './components/course-card', './components/mentor';
+@import './components/header', './components/course-card', './components/mentor', './components/course-category';
 
 // pages
-@import './pages/index';
+@import './pages/index', './pages/courses', './pages/profile';

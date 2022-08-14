@@ -3,18 +3,20 @@
         <div class="logo">
             <img src="./../static/Logo.svg" alt="">
         </div>
-        <ul>
-            <li v-for="(e, i) in links" :key="i">
-                <nuxt-link :to="e.href">{{ e.name_tm }}</nuxt-link>
+        <ul class="headerUl">
+            <li v-for="(e, i) in links" :key="i" @click="addActive(i)">
+                <nuxt-link :to="e.href"  :class="e.active ? 'active' : ''">{{ $tt(e.name_tm, e.name_ru) }}</nuxt-link>
+                <!-- <nuxt-link :to="e.href" >{{ $tt(e.name_tm, e.name_ru) }}</nuxt-link> -->
             </li>
         </ul>
         <div class="nav_btns">
-            <div class="btn">Agza bol</div>
+            <div class="btn">{{$t('login')}}</div>
             <div class="lang">
-                <button class="dropbtn">TM</button>
+                <button class="dropbtn">{{lang}}</button>
                 <div class="lang-content">
-                    <button>RU</button>
-                    <button>TM</button>
+                    <div v-for="(e, i) in locales" :key="i">
+                        <button @click="$i18n.setLocale(e.code)" v-if="e.code != lang">{{e.name}}</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -64,7 +66,28 @@ export default {
 
             ]
         }
+    },
+
+
+    
+  computed: {
+    lang(){
+      return this.$i18n.locale
+    },
+    locales(){
+      return this.$i18n.locales
     }
+  },
+
+  methods:{
+    addActive(id){
+        const li = document.querySelectorAll('.headerUl li')
+        for(let i =0 ; i< li.length; i++){
+            li[i].querySelector('a').classList.remove('active');
+        }
+        li[id].querySelector('a').classList.add('active');
+    }
+  }
 
 }
 </script>

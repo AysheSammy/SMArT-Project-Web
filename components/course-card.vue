@@ -4,16 +4,16 @@
         <div class="alt_banner">
             <div class="first">
                 <img src="./../assets/images/home/course-logo.png" alt="">
-                <p>{{ course.isFree == true ? 'Tölegli' : 'Tölegsiz' }}</p>
+                <p>{{ course.isFree == true ? $t('free') : $t('notFree') }}</p>
             </div>
             <h3>{{ course.name }}</h3>
-            <p class="course-type"><span></span> {{ course.type }}</p>
+            <p class="course-type"><span></span> {{ $tt('type_tm', 'type_ru') }}</p>
             <div class="course-infos">
                 <div class="course-info">
-                    <h4>Möhleti:</h4>
-                    <p>{{ course.durationMonth }} aý</p>
-                    <h4>Adam sany:</h4>
-                    <p>{{ course.participantNumber }} adam</p>
+                    <h4>{{$t('duration')}}:</h4>
+                    <p>{{ course.durationMonth }} {{$t('month')}}</p>
+                    <h4>{{$t('num_people')}}:</h4>
+                    <p>{{ course.participantNumber }} {{$t('people')}}</p>
                 </div>
                 <div class="course-ingrdnt">
                     <p class="info" v-for="(e, i) in course.ingredients" :key="i">
@@ -23,7 +23,7 @@
                 </div>
             </div>
 
-            <button>Kursa ýazyl</button>
+            <button>{{$t('sign_course')}}</button>
         </div>
     </div>
 </template>

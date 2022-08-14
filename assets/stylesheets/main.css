@@ -61,20 +61,33 @@ nav ul li a:hover::after {
   background-color: #0D2DA2;
   box-shadow: 5px 4px 10px #0d2da2;
 }
+nav ul li .active {
+  transition: 0.3s ease-in-out;
+  color: #0D2DA2;
+}
+nav ul li .active::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #0D2DA2;
+  box-shadow: 5px 4px 10px #0d2da2;
+}
 nav .nav_btns {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 nav .nav_btns .btn {
-  padding: 10px 10px;
+  padding: 0.5rem 0.5rem;
   background: #FF9E01;
   box-shadow: 0px 4px 20px rgba(255, 178, 125, 0.4);
   border-radius: 8px;
   color: #FFFFFF;
   font-weight: 600;
   font-size: 18px;
-  line-height: 14px;
+  line-height: 130%;
   transition: 0.3s ease-in-out;
   border: none;
   cursor: pointer;
@@ -99,6 +112,7 @@ nav .nav_btns .lang .dropbtn {
   border: none;
   outline: none;
   cursor: pointer;
+  text-transform: uppercase;
 }
 nav .nav_btns .lang .lang-content {
   display: none;
@@ -115,6 +129,8 @@ nav .nav_btns .lang .lang-content button {
   display: block;
   border: none;
   outline: none;
+  cursor: pointer;
+  text-transform: uppercase;
 }
 nav .nav_btns .lang .lang-content button:hover {
   background-color: #f1f1f1;
@@ -227,14 +243,14 @@ nav .nav_btns .lang:hover .lang-content {
   margin-right: 5px;
 }
 .course .alt_banner button {
-  padding: 10px 10px;
+  padding: 0.5rem 0.5rem;
   background: #FF9E01;
   box-shadow: 0px 4px 20px rgba(255, 178, 125, 0.4);
   border-radius: 8px;
   color: #FFFFFF;
   font-weight: 600;
   font-size: 12px;
-  line-height: 14px;
+  line-height: 130%;
   transition: 0.3s ease-in-out;
   border: none;
   cursor: pointer;
@@ -251,9 +267,6 @@ nav .nav_btns .lang:hover .lang-content {
   background: #FFFFFF;
   box-shadow: 0px 4px 20px #b9bcbe, inset 2px 2px 20px #d6dbde;
   border-radius: 20px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
   flex-direction: column;
   text-align: center;
 }
@@ -261,17 +274,78 @@ nav .nav_btns .lang:hover .lang-content {
   width: 150px;
   height: 150px;
   border-radius: 50%;
+  margin-top: 30px;
 }
 .mentor p.name {
   font-weight: 600;
-  font-size: 26px;
-  line-height: 31px;
+  font-size: 20px;
+  line-height: 20px;
   color: #0A0A0A;
+  margin-top: 10px;
 }
 .mentor p.job {
   font-weight: 400;
-  font-size: 26px;
-  line-height: 31px;
+  font-size: 20px;
+  line-height: 20px;
+  color: #0A0A0A;
+  margin-top: 20px;
+}
+
+.categories {
+  width: 389px;
+  height: 100%;
+  min-height: 100vh;
+  padding: 40px 5%;
+  box-shadow: 3px 4px 20px rgba(0, 0, 0, 0.25);
+}
+.categories > p {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 23px;
+  color: #0D2DA2;
+}
+.categories > p::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 1px;
+  background-color: #FDEA6E;
+  margin-top: 10px;
+}
+.categories .dropdowns div {
+  position: relative;
+}
+.categories .dropdowns div img {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: -10%;
+  top: 0;
+  transform: rotate(-90deg);
+}
+.categories .dropdowns div .down {
+  transform: rotate(0deg);
+  transition: 0.3s ease-in-out;
+}
+.categories .dropdowns div h4 {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #0A0A0A;
+  cursor: pointer;
+  margin-top: 20px;
+  position: relative;
+}
+.categories .dropdowns ul {
+  position: relative;
+  padding-left: 39px;
+  margin-top: 20px;
+}
+.categories .dropdowns ul li {
+  margin-top: 10px;
+  cursor: pointer;
+}
+.categories .dropdowns ul li a:hover {
   color: #0A0A0A;
 }
 
@@ -283,7 +357,51 @@ nav .nav_btns .lang:hover .lang-content {
 .home .hooper .slide {
   width: 100%;
   height: 100%;
-  background-color: green;
+  position: relative;
+  padding-left: 150px;
+  padding-top: 110px;
+}
+.home .hooper .slide img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.home .hooper .slide h2 {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 47px;
+  color: #FFFFFF;
+  z-index: 2;
+}
+.home .hooper .slide h1 {
+  width: 80%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-weight: 700;
+  font-size: 70px;
+  line-height: 82px;
+  color: #FFFFFF;
+  z-index: 2;
+}
+.home .hooper .slide button {
+  padding: 0.5rem 0.5rem;
+  background: #FF9E01;
+  box-shadow: 0px 4px 20px rgba(255, 178, 125, 0.4);
+  border-radius: 8px;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 130%;
+  transition: 0.3s ease-in-out;
+  border: none;
+  cursor: pointer;
+}
+.home .hooper .slide button:hover {
+  background-color: #FFFFFF;
+  color: #FF9E01;
 }
 .home .about {
   width: 100%;
@@ -343,9 +461,6 @@ nav .nav_btns .lang:hover .lang-content {
 .home .courses .course-cards .hooper .hooper-prev {
   left: -60px;
 }
-.home .courses .course-cards .hooper .hooper-next {
-  right: -10px;
-}
 .home .mentors {
   width: 100%;
   max-height: 600px;
@@ -369,6 +484,101 @@ nav .nav_btns .lang:hover .lang-content {
 .home .mentors .mentor-cards .hooper .hooper-prev {
   left: -60px;
 }
-.home .mentors .mentor-cards .hooper .hooper-next {
-  right: -10px;
+
+section.courses {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section.courses .course-cardlar {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: auto;
+  margin: 0 auto;
+  padding-top: 200px;
+  padding-left: 30px;
+  width: calc(100% - 389px);
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(299px, 1fr));
+}
+
+.inputs {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(65.98deg, #211ede 11.33%, #20196a 92.45%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inputs .content {
+  width: 80%;
+  height: 90%;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 55px 130px;
+}
+.inputs .content p.name {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 39px;
+  color: rgba(0, 0, 0, 0.89);
+}
+.inputs .content .forms {
+  width: 100%;
+  height: auto;
+}
+.inputs .content .forms .input {
+  width: 40%;
+  display: inline-block;
+  margin-right: 80px;
+}
+.inputs .content .forms .input label {
+  display: block;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 38px;
+  color: #000000;
+}
+.inputs .content .forms .input input {
+  width: 100%;
+  height: 35px;
+  background: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  outline: none;
+  padding: 10px;
+  font-size: 18px;
+}
+.inputs .content .forms button {
+  display: block;
+  width: 80%;
+  height: 40px;
+  margin: 0 auto;
+  background: linear-gradient(269.78deg, rgba(32, 25, 106, 0.84) 12.77%, rgba(33, 30, 222, 0.84) 79.75%);
+  border: 0.5px solid #61b0dc;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 42px;
+  color: #ffffff;
+  margin-top: 50px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.inputs .content .forms button:hover {
+  background: linear-gradient(5deg, rgba(32, 25, 106, 0.84) 12.77%, rgba(33, 30, 222, 0.84) 79.75%);
+  transition: 0.3s ease-in-out;
+}
+.inputs .content a {
+  display: block;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 29px;
+  color: #060606;
+  margin-top: 50px;
+  text-decoration: none;
 }/*# sourceMappingURL=main.css.map */

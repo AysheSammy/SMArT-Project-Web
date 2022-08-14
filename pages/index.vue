@@ -2,19 +2,13 @@
   <div class="home">
     <div class="hooper">
       <hooper :settings="hooperSettings" group="banner">
-        <slide>
+        <slide v-for="e in banners" :key="e">
           <div class="slide">
+            <img :src="require(`@/assets/images/home/${e.img}`)" alt="">
 
-          </div>
-        </slide>
-        <slide>
-          <div class="slide">
-
-          </div>
-        </slide>
-        <slide>
-          <div class="slide">
-
+            <h2>{{$tt(e.subtitle_tm, e.subtitle_ru)}}</h2>
+            <h1>{{$tt(e.title_tm, e.title_ru)}}</h1>
+            <button>{{$tt(e.btn_tm, e.btn_ru)}}</button>
           </div>
         </slide>
 
@@ -26,22 +20,18 @@
     <div class="about">
       <div class="title">
         <img src="@/static/Logo.svg" alt="">
-        <p>kim?</p>
+        <p>{{ $t('who') }}</p>
       </div>
 
       <div class="about_content">
         <img src="@/assets/images/home/about-banner.png" alt="">
-        <div class="text">
-          Zenanlaryň hukuklaryny we mümkinçiliklerini giňeltmek maksady bilen, aýal-gyzlaryň bilim almagyna, dowamly
-          kämilleşmegine, kär saýlamaga, hünär taýýarlygyna goldaw berýän online okuw merkezi. Mundan başga-da üstünikli
-          tamamlan uçurumlarymyzy işe ýerleşmäge kömek edýäris.
-        </div>
+        <div class="text">{{ $t('about') }}</div>
       </div>
 
     </div>
 
     <div class="courses">
-      <h2>Kurslarymyz: </h2>
+      <h2>{{ $t('ourCourses') }}</h2>
       <div class="course-cards">
         <hooper :settings="courseSetting">
           <slide v-for="(e, i) in courses" :key="i">
@@ -53,7 +43,7 @@
     </div>
 
     <div class="mentors">
-      <h2>Mentorlarymyz:</h2>
+      <h2>{{ $t('mentors') }}</h2>
       <div class="mentor-cards">
         <hooper :settings="courseSetting">
           <slide v-for="(e, i) in mentors" :key="i">
@@ -79,106 +69,167 @@ import Mentor from '@/components/mentor-card.vue';
 export default {
   data() {
     return {
+      banners: [
+        {
+          img:'banner-img1.png',
+          subtitle_tm: 'Gyzlar üçin tölegsiz',
+          title_tm: 'Online IT Kurslar',
+          btn_tm: 'Kurslary gör',
+          subtitle_ru: 'Бесплатно для девушек',
+          title_ru: 'Онлайн-курсы по ИТ',
+          btn_ru: 'Посмотреть курсы'
+        },
+        {
+          img:'banner-img2.png',
+          subtitle_tm: 'Gyzlar üçin tölegsiz',
+          title_tm: 'Front-End Web Development Kursy',
+          btn_tm: 'Kursa Git',
+          subtitle_ru: 'Бесплатно для девушек',
+          title_ru: 'Front-End веб-разработка Курсы',
+          btn_ru: 'Перейти к курсу'
+        },
+        {
+          img:'banner-img3.png',
+          subtitle_tm: 'Gyzlar üçin tölegsiz',
+          title_tm: 'Front-End Mobile Development Kursy',
+          btn_tm: 'Kursa Git',
+          subtitle_ru: 'Бесплатно для девушек',
+          title_ru: 'Front-End мобильная разработка Курсы',
+          btn_ru: 'Перейти к курсу'
+        },
+        {
+          img:'banner-img4.png',
+          subtitle_tm: 'Gyzlar üçin tölegsiz',
+          title_tm: 'UI / UX Design Kursy',
+          btn_tm: 'Kurslary gör',
+          subtitle_ru: 'Бесплатно для девушек',
+          title_ru: 'Курсы UI/UX-дизайна',
+          btn_ru: 'Перейти к курсу'
+        },
+        {
+          img:'banner-img5.png',
+          subtitle_tm: 'Gyzlar üçin tölegsiz',
+          title_tm: '3DMax Design Kursy',
+          btn_tm: 'Kurslary gör',
+          subtitle_ru: 'Бесплатно для девушек',
+          title_ru: '3DMax Design КурсыТ',
+          btn_ru: 'Перейти к курсу'
+        },
+      ],
       courses: [
         {
           id: 0,
           name: 'Web Development',
           isFree: true,
-          type: 'Beginner',
+          type_tm: 'Başlangyç',
           ingredients: ['HTML', 'CSS', 'JS'],
           participantNumber: 10,
           durationMonth: 3,
+          type_ru: 'Новичок',
         },
         {
           id: 1,
           name: 'Mobile Development',
           isFree: true,
-          type: 'Beginner',
+          type_tm: 'Başlangyç',
           ingredients: ['Dart', 'Flutter'],
           participantNumber: 10,
           durationMonth: 3,
+          type_ru: 'Новичок'
         },
         {
           id: 2,
           name: 'UI / UX Design',
           isFree: true,
-          type: 'Beginner',
+          type_tm: 'Başlangyç',
           ingredients: ['Figma', 'Photoshop'],
           participantNumber: 10,
           durationMonth: 3,
+          type_ru: 'Новичок'
         },
         {
           id: 3,
           name: '3D Max',
           isFree: true,
-          type: 'Beginner',
+          type_tm: 'Beginner',
           ingredients: ['3D max'],
           participantNumber: 10,
           durationMonth: 3,
+          type_ru: 'Новичок'
         },
         {
           id: 4,
           name: 'Web Development',
           isFree: false,
-          type: 'Intermediate',
+          type_tm: 'Intermediate',
           ingredients: ['Vue', 'Nuxt'],
           participantNumber: 10,
           durationMonth: 3,
+          type_ru: 'Средний'
         },
         {
           id: 4,
           name: 'Mobile Development',
           isFree: false,
-          type: 'Intermediate',
+          type_tm: 'Intermediate',
           ingredients: ['Dart Intermediate', 'Flutter Exclusive'],
           participantNumber: 10,
           durationMonth: 3,
+          type_ru: 'Средний'
         },
       ],
       mentors: [
         {
           id: 1,
           img: 'mentor1.png',
-          fname: 'Söýli',
-          lname: 'Atabeýawa',
-          job: 'Mobile Developer'
+          fname_tm: 'Söýli',
+          lname_tm: 'Atabeýawa',
+          job_tm: 'Mobile Developer',
+          fname_ru: 'Сойли',
+          lname_ru: 'Атабаева',
+          job_ru: 'Мобильный разработчик',
         },
         {
           id: 2,
           img: 'mentor1.png',
-          fname: 'Ayshe',
-          lname: 'Samiyeva',
-          job: 'Web Developer'
+          fname_tm: 'Ayshe',
+          lname_tm: 'Samiyeva',
+          job_tm: 'Web Developer',
+          fname_ru: 'Айше',
+          lname_ru: 'Саммиева',
+          job_ru: 'Веб-разработчик',
         },
         {
           id: 3,
           img: 'mentor1.png',
-          fname: 'Agageldi',
-          lname: 'Pylaniyew',
-          job: 'Back-End Developer'
+          fname_tm: 'Agamyrat',
+          lname_tm: 'Chariyew',
+          job_tm: 'Back-End Developer',
+          fname_ru: 'Агамырат',
+          lname_ru: 'Чарыев',
+          job_ru: 'Back-End разработчик',
         },
         {
           id: 4,
           img: 'mentor1.png',
-          fname: 'Begench',
-          lname: 'Jumayew',
-          job: 'Mobile Developer'
+          fname_tm: 'Begench',
+          lname_tm: 'Jumayew',
+          job_tm: 'Mobile Developer',
+          fname_ru: 'Бегенч',
+          lname_ru: 'Джумаев',
+          job_ru: 'Мобильный разработчик',
         },
         {
           id: 5,
           img: 'mentor1.png',
-          fname: 'Geldimyrat',
-          lname: 'Chashemow',
-          job: 'Web Developer'
-        },
-        {
-          id: 6,
-          img: 'mentor1.png',
-          fname: 'Merjen',
-          lname: 'Saparowa',
-          job: 'Mobile Developer'
+          fname_tm: 'Merjen',
+          lname_tm: 'Saparmyradowa',
+          job_tm: 'Web Developer',
+          fname_ru: 'Мерджен',
+          lname_ru: 'Сапармырадова',
+          job_ru: 'Веб-разработчик',
         }
-      ]
+      ],
     }
   },
   components: {
